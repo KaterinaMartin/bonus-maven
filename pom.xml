@@ -1,14 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>ru.netology.javaqa</groupId>
-  <artifactId>bonusmaven</artifactId>
+  <artifactId>javaqamvn</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <project.build.sourceEncording>UTF-8</project.build.sourceEncording>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencies>
@@ -25,43 +28,12 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.20</version>
+        <version>2.22.2</version>
         <configuration>
-          <includes>
-            <include>Sample.java</include>
-          </includes>
-          <excludes>
-            <exclude>**/TestCircle.java</exclude>
-            <exclude>**/TestSquare.java</exclude>
-          </excludes>
+          <failIfNoTests>true</failIfNoTests>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.2.1</version>
-        <configuration>
-          <checkstyleRules>
-            <module name="Checker">
-              <module name="TreeWalker">
-                <module name="LocalVariableName"/>
-              </module>
-            </module>
-          </checkstyleRules>
-        </configuration>
-        <executions>
-          <execution>
-            <id>validate</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
 
-  <name>Archetype - bonusmaven</name>
-  <url>http://maven.apache.org</url>
 </project>
